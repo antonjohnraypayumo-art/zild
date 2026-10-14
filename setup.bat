@@ -45,6 +45,7 @@ call php artisan config:clear
 echo.
 echo === 5/6  Copying the Zild Cafe backend into the project ===
 xcopy "%HERE%app" "%TARGET%\app" /E /I /Y >nul || goto :fail
+xcopy "%HERE%config" "%TARGET%\config" /E /I /Y >nul || goto :fail
 xcopy "%HERE%database" "%TARGET%\database" /E /I /Y >nul || goto :fail
 xcopy "%HERE%routes" "%TARGET%\routes" /E /I /Y >nul || goto :fail
 xcopy "%HERE%resources" "%TARGET%\resources" /E /I /Y >nul || goto :fail

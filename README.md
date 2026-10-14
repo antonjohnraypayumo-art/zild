@@ -1,25 +1,24 @@
-# Zild Cafe – Laravel backend + MySQL schema (XAMPP)
+# Zild Cafe – Laravel café ordering system
 
 Laravel backend and Blade website for Zild Cafe (menu, cart, checkout, blog, team, reviews, contact).
 The pages render through Laravel routes and Blade templates; CSS, JavaScript, and images remain in `public/site/` as public assets.
 
-This folder is an **overlay**: it contains the app code (models, controllers, routes, migrations, seeders) that gets
-copied on top of a fresh Laravel install, so you always get a clean, up-to-date Laravel underneath.
-
 ```
-app/        models, API controllers, admin middleware
-database/   11 migrations, seeders, zild_cafe.sql (phpMyAdmin import)
-routes/     api.php (all endpoints), web.php
-resources/views/site  website pages as Blade templates
-public/site           CSS, JavaScript, and image assets
+app/        Laravel models, API controllers, admin middleware
+bootstrap/  Laravel application bootstrap
+config/     Laravel configuration, including Zild Cafe admin settings
+database/   Laravel migrations, seeders, and optional SQL import
+resources/  Blade views and starter Laravel resources
+routes/     web.php, api.php, and console.php
+public/     Laravel entry point, CSS, JavaScript, and image assets
 setup.bat   one-click XAMPP setup (Windows)
 ```
 
 ## Requirements
-- XAMPP with **PHP 8.2+** and MySQL/MariaDB (check with `C:\xampp\php\php.exe -v`)
+- PHP 8.2+ and MySQL/MariaDB
 - [Composer](https://getcomposer.org/Composer-Setup.exe)
 
-## Setup – one click (Windows)
+## Local setup – one click (Windows/XAMPP)
 1. Open the **XAMPP Control Panel** → start **MySQL** (and Apache).
 2. Double-click **`setup.bat`**.
    The installer connects Laravel to the existing `zild_cafe` database and preserves its data. It only runs migrations and seeders when the database has no tables; a partial schema stops setup without changing it.
@@ -32,27 +31,46 @@ setup.bat   one-click XAMPP setup (Windows)
    - API: http://127.0.0.1:8000/api/menu
    - phpMyAdmin: http://localhost/phpmyadmin → database `zild_cafe`
 
-## Setup – manual (any OS)
+## Local setup – manual
 ```bash
-composer create-project laravel/laravel zild-cafe
+git clone https://github.com/antonjohnraypayumo-art/zild.git zild-cafe
 cd zild-cafe
+composer install
+cp .env.example .env
 ```
-Create the database `zild_cafe` (phpMyAdmin → New, collation `utf8mb4_unicode_ci`), then in `.env` set:
+Create the database `zild_cafe` (for example, in phpMyAdmin), then configure `.env` with the database connection. Generate an application key and build the local schema and starter data:
 ```
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=zild_cafe
-DB_USERNAME=root
-DB_PASSWORD=
-```
-```bash
-php artisan install:api            # adds Sanctum (API tokens)
-# copy this folder's app/, database/, routes/, public/ over the project (overwrite when asked)
-php artisan storage:link
+php artisan key:generate
 php artisan migrate --seed
+php artisan storage:link
 php artisan serve
 ```
+
+## Deploy to Railway
+
+This repository is a complete Laravel application and can be deployed from GitHub. Vercel's standard deployment flow does not run this PHP/Laravel application, which is why it returned `404 NOT_FOUND`.
+
+1. In Railway, create a project and choose **Deploy from GitHub repo**, then select `antonjohnraypayumo-art/zild`.
+2. Add a Railway **MySQL** service to the project.
+3. In the Laravel service's **Variables**, add the variables below. Set the `DB_*` values using Railway's variable references to the MySQL service (shown here as `MySQL`); do not put database credentials in GitHub.
+   ```
+   APP_NAME="Zild Cafe"
+   APP_ENV=production
+   APP_DEBUG=false
+   APP_KEY=<generate a unique key with php artisan key:generate --show>
+   APP_URL=<the Railway public domain, after generating it>
+   DB_CONNECTION=mysql
+   DB_HOST=${{MySQL.MYSQLHOST}}
+   DB_PORT=${{MySQL.MYSQLPORT}}
+   DB_DATABASE=${{MySQL.MYSQLDATABASE}}
+   DB_USERNAME=${{MySQL.MYSQLUSER}}
+   DB_PASSWORD=${{MySQL.MYSQLPASSWORD}}
+   ```
+4. Generate a public domain in Railway service **Settings → Networking**. Set `APP_URL` to that HTTPS URL and redeploy.
+5. Once the MySQL service is available, run `php artisan migrate --force` for the Laravel service using Railway's command/run facility. For a brand-new database, seed the starter menu and create the first admin once with `php artisan db:seed --force`. Before seeding, set `ZILD_ADMIN_NAME`, `ZILD_ADMIN_EMAIL`, `ZILD_ADMIN_PASSWORD` (12+ characters), and optionally `ZILD_ADMIN_PHONE` in the service variables. Do not use the local demo password in production.
+6. Confirm the deployment logs show Laravel is serving requests, then open the generated domain and test customer signup, saved delivery location, and checkout.
+
+Keep Railway database credentials, `APP_KEY`, and production admin credentials in Railway's private variables only. Do not commit `.env`. Uploaded product media is stored on the application filesystem; configure persistent/object storage before relying on uploaded images in production, because an app redeploy may replace local files.
 
 ## Alternative: import the SQL only (phpMyAdmin)
 `database/zild_cafe.sql` creates the `zild_cafe` database, every table, and starter menu/blog/team/reviews data. It includes a development-only customer account and no admin account; do not import the demo customer into a live database. It includes the saved delivery-location fields used by the current checkout.

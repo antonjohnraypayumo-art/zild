@@ -1,0 +1,836 @@
+/* General reset and global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure it stays above other content */
+  background-color: rgba(0, 0, 0, 0.85); /* Optional: Background color for visibility */
+  transition: background-color 0.3s; /* Optional: Smooth transition for background color */
+}
+
+/* Header Section */
+.header_section {
+  background-color: #333;
+  padding: 20px 0;
+}
+.card {
+  height: 100%; /* Make the card take full height of the column */
+}
+
+.card-img-top {
+  height: 300px; /* Set a fixed height for the images */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Space out content evenly */
+}
+.btn-custom {
+  background-color: #c19a6b; /* Base background color */
+  border: none; /* Remove default border */
+  border-radius: 30px; /* Rounded corners */
+  color: #fff; /* Text color */
+  font-size: 1.2rem; /* Font size */
+  padding: 12px 30px; /* Padding for button */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background color and transform */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Ensure proper spacing */
+}
+
+.btn-custom:hover {
+  background-color: #a67c52; /* Darker background on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.btn-custom:focus {
+  outline: none; /* Remove outline on focus */
+  box-shadow: 0 0 0 0.2rem rgba(193, 154, 107, 0.5); /* Add focus shadow */
+}
+.header_section .navbar {
+  padding: 0;
+}
+
+.navbar-brand span {
+  font-size: 30px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav-item {
+  margin: 0 15px;
+}
+
+.nav-link {
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #f8a5c2;
+}
+
+#about {
+  padding: 50px 0; /* Add padding for spacing */
+  color: #fff; /* Change text color to white for better contrast */
+  position: relative; /* Position relative for the overlay */
+  overflow: hidden; /* Prevent overflow */
+  height: auto; /* Set a specific height for the section */
+  background-color: #ddcb95; /* Darker grey background color */
+}
+
+#about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(26, 22, 22, 0.507); /* Black with 50% opacity */
+  z-index: 0; /* Place behind the content */
+}
+
+#about .container {
+  position: relative; /* Ensure content is above the overlay */
+  z-index: 1; /* Bring content above the overlay */
+  color: #fff; /* Change text color to white for better contrast */
+}
+
+.about-section {
+  padding: 20px; /* Adjust padding to make the section smaller */
+  max-width: 800px; /* Set a maximum width for the section */
+  margin: 40px auto; /* Center the section and add top margin */
+  border-radius: 10px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+/* Optional: Ensure all text elements within the #about section are white */
+#about h2, 
+#about p, 
+#about a {
+  color: #fff; /* Set text color to white */
+}
+body {
+  font-family: Arial, sans-serif; /* Font for the entire page */
+  line-height: 1.6; /* Line height for better readability */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  background-color: #f8f5f0; /* Light background color for the page */
+}
+
+/* Header Styles */
+header {
+  background-color: #f0f0f0; /* Lighter background for the header */
+  color: #333; /* Dark text color */
+  padding: 20px; /* Padding around the header */
+  text-align: center; /* Center the text */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for header */
+}
+
+/* Reviews Section Styles */
+.reviews-section {
+  padding: 30px; /* Padding inside the reviews section */
+  max-width: 800px; /* Maximum width for the reviews */
+  margin: 20px auto; /* Center the reviews section */
+  background-color: #fff; /* White background for the reviews */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Review Card Styles */
+.review-card {
+  border-bottom: 1px solid #e0e0e0; /* Divider between reviews */
+  padding: 20px; /* Padding inside each review card */
+  display: flex; /* Flexbox for layout */
+  align-items: center; /* Center items vertically */
+}
+
+.review-card:last-child {
+  border-bottom: none; /* Remove border for the last review */
+}
+
+.review-image {
+  width: 60px; /* Width of the reviewer's image */
+  height: 60px; /* Height of the reviewer's image */
+  border-radius: 50%; /* Circular image */
+  margin-right: 20px; /* Space between image and text */
+}
+
+.review-content {
+  flex-grow: 1; /* Allow content to grow */
+}
+.reviews-section {
+  padding: 60px 20px; /* Add padding to the reviews section */
+  background-color: #f8f5f0; /* Light background color */
+}
+
+.review-card {
+  display: flex; /* Flexbox for layout */
+  align-items: center; /* Center items vertically */
+  background-color: #fff; /* White background for each review */
+  padding: 15px; /* Padding inside each review card */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.review-content {
+  margin-left: 15px; /* Space between image and text */
+}
+.reviews-section {
+  padding: 60px 20px; /* Increase padding for the reviews section */
+  background-color: #f8f5f0; /* Light background color */
+}
+
+.review-card {
+  display: flex; /* Flexbox for layout */
+  align-items: center; /* Center items vertically */
+  background-color: #fff; /* White background for each review */
+  padding: 20px; /* Increase padding inside each review card */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.review-image {
+  width: 80px; /* Increase width of the reviewer's image */
+  height: 80px; /* Increase height of the reviewer's image */
+  border-radius: 50%; /* Circular image */
+  margin-right: 20px; /* Space between image and text */
+}
+
+.review-content h3 {
+  font-size: 1.5rem; /* Increase font size for reviewer name */
+}
+
+.review-content p {
+  font-size: 1.1rem; /* Increase font size for review text */
+}
+/* Star Rating Styles */
+.star-rating {
+  color: #ffcc00; /* Gold color for stars */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f1ea; /* Light background color for the page */
+  scroll-behavior: smooth;
+}
+
+/* Header Styles */
+header {
+  background-color: #f0f0f0; /* Lighter background for the header */
+  color: #333; /* Dark text color */
+  padding: 20px; /* Padding around the header */
+  text-align: center; /* Center the text */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for header */
+}
+
+/* Reviews Section Styles */
+.reviews-section {
+  padding: 60px 20px; /* Increase padding for the reviews section */
+  background-color: #f6ebd9d7; /* Light background color */
+  min-height: calc(100vh - 80px); /* Full height minus header */
+}
+
+/* Review Card Styles */
+.review-card {
+  display: flex; /* Flexbox for layout */
+  align-items: center; /* Center items vertically */
+  background-color: #fff; /* White background for each review */
+  padding: 20px; /* Increase padding inside each review card */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-bottom: 20px; /* Space between review cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.review-image {
+  width: 80px; /* Increase width of the reviewer's image */
+  height: 80px; /* Increase height of the reviewer's image */
+  border-radius: 50%; /* Circular image */
+  margin-right: 20px; /* Space between image and text */
+}
+
+.review-content {
+  flex-grow: 1; /* Allow content to grow */
+}
+
+.review-content h3 {
+  font-size: 1.5rem; /* Increase font size for reviewer name */
+}
+
+.review-content p {
+  font-size: 1.1rem; /* Increase font size for review text */
+}
+
+/* Star Rating Styles */
+.star-rating {
+  color: #ffcc00; /* Gold color for stars */
+}
+
+.btn-custom {
+  background: linear-gradient(to right, #f6c745, #a47148);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  background: linear-gradient(to right, #c29b28, #dfc460);
+  color: bisque;
+
+}
+
+
+/* Button Styles */
+.btn {
+  display: inline-block; /* Make the button inline */
+  padding: 10px 20px; /* Padding inside the button */
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  text-decoration: none; /* Remove underline from links */
+  border-radius: 5px; /* Rounded corners for the button */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  margin-top: 20px; /* Space above the button */
+  text-align: center; /* Center the button text */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Hero Section */
+.hero_area {
+  background-image: url('images/hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero_area .navbar {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.footer_widget {
+  background-color: #333; /* Dark background for the footer */
+  color: #fff; /* White text color */
+  padding-top: 40px; /* Padding for the footer */
+}
+
+.footer_title {
+  font-size: 1.5rem; /* Font size for footer titles */
+  margin-bottom: 15px; /* Space below titles */
+  color: #c19a6b; /* Custom color for titles */
+}
+
+.footer_about p, .footer_link ul li, .footer_contact ul li {
+  font-size: 1rem; /* Font size for paragraph and list items */
+  margin-bottom: 10px; /* Space below items */
+}
+
+.footer_link ul {
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* Remove padding */
+}
+
+.footer_link ul li a {
+  color: #fff; /* White text color for links */
+  text-decoration: none; /* Remove underline from links */
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.footer_link ul li a:hover {
+  color: #c19a6b; /* Change color on hover */
+}
+
+.social {
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* Remove padding */
+  display: flex; /* Flexbox for social
+/* Work Section */
+}
+.work_section {
+  background-color: #fff;
+  padding: 60px 0;
+}
+
+.work_section .heading_container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.work_section .heading_container h2 {
+  font-size: 32px;
+  color: #333;
+}
+
+.work_section .heading_container p {
+  font-size: 16px;
+  color: #777;
+  margin-top: 10px;
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+.work_section .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.work_section .box {
+  width: 100%;
+  height: 250px;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.work_section .box:hover {
+  transform: scale(1.05);
+}
+
+.work_section .box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Info Section */
+.info_section {
+  background-color: #f8f8f8;
+  padding: 60px 0;
+}
+
+.info_section .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info_section .info_contact, .info_section .info_info, .info_section .info_insta, .info_section .info_form {
+  width: 23%;
+}
+
+.info_section h5 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.info_section p {
+  font-size: 14px;
+  color: #777;
+}
+
+.info_section .img-box {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.info_section .social_box a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.info_section .social_box a img {
+  width: 30px;
+  height: 30px;
+}
+
+.info_section input {
+  padding: 10px;
+  width: 80%;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+}
+
+.info_section button {
+  padding: 10px 20px;
+  background-color: #f8a5c2;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.info_section button:hover {
+  background-color: #e87e9f;
+}
+
+/* Footer Section */
+.footer_section {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer_section a {
+  color: #f8a5c2;
+  text-decoration: none;
+}
+
+.footer_section a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .info_section .container {
+      flex-direction: column;
+  }
+
+  .info_section .info_contact, .info_section .info_info, .info_section .info_insta, .info_section .info_form {
+      width: 100%;
+      margin-bottom: 30px;
+  }
+
+  .work_section .row {
+      flex-direction: column;
+  }
+
+  .work_section .box {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+}
+.navbar-brand span {
+  font-size: 30px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav-item {
+  margin: 0 15px;
+}
+
+.nav-link {
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #f8a5c2;
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background-color: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-clip: padding-box;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+    animation: fadeSlideDown 0.4s ease-in-out;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-link {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px 20px;
+    border-radius: 15px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  .nav-link:hover {
+    background-color: #95631d;
+    color: #1a1a1a !important;
+    transform: scale(1.07);
+  }
+
+  @keyframes fadeSlideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+.card-img-top {
+  width: 100%;
+  height: auto;
+  max-height: 300px; /* You can adjust this */
+  object-fit: cover;
+  border-radius: 10px;
+}
+@media (max-width: 767px) {
+  .card-img-top {
+    max-height: 200px;
+  }
+}
+
+.navbar-nav .site-account-item {
+  position: relative;
+  flex: 0 0 auto;
+  width: auto;
+  margin: 0 8px;
+  text-align: left;
+}
+
+.site-account-menu { position: relative; }
+.site-account-menu summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 4px 9px 4px 4px;
+  border: 1px solid rgb(255 255 255 / 24%);
+  border-radius: 24px;
+  color: #fff;
+  cursor: pointer;
+  list-style: none;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.site-account-menu summary::-webkit-details-marker { display: none; }
+.site-account-avatar {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  place-items: center;
+  border-radius: 50%;
+  background: #d9a15f;
+  color: #30231a;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.site-account-name {
+  max-width: 112px;
+  overflow: hidden;
+  font-size: 13px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.site-account-chevron { margin-left: 2px; font-size: 10px; transition: transform 150ms ease; }
+.site-account-menu[open] .site-account-chevron { transform: rotate(180deg); }
+.site-account-popover {
+  position: absolute;
+  z-index: 1200;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 220px;
+  padding: 7px;
+  border: 1px solid #e6e3dc;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 10px 28px rgb(0 0 0 / 19%);
+}
+
+.site-account-email {
+  display: block;
+  overflow: hidden;
+  padding: 9px 10px 11px;
+  border-bottom: 1px solid #ece9e2;
+  color: #777168;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.site-account-popover a,
+.site-account-popover button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #302d28;
+  font: 500 14px 'DM Sans', 'Segoe UI', sans-serif;
+  letter-spacing: 0;
+  text-align: left;
+  text-decoration: none;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.site-account-popover a:hover,
+.site-account-popover button:hover { background: #f4f2ec; color: #493522; }
+.site-account-popover i { width: 16px; color: #8a6745; text-align: center; }
+
+@media (max-width: 768px) {
+  .navbar-nav .site-account-item { width: 100%; margin: 0; text-align: left; }
+  .site-account-menu { width: 100%; }
+  .site-account-menu summary { justify-content: center; }
+  .site-account-popover { position: static; width: 100%; margin-top: 7px; box-shadow: none; text-align: left; }
+}
+
+.navbar-nav .site-account-item {
+  position: relative;
+  flex: 0 0 auto;
+  width: auto;
+  margin: 0 8px;
+  text-align: left;
+}
+
+.site-account-menu { position: relative; }
+.site-account-menu summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 4px 9px 4px 4px;
+  border: 1px solid rgb(255 255 255 / 24%);
+  border-radius: 24px;
+  color: #fff;
+  cursor: pointer;
+  list-style: none;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.site-account-menu summary::-webkit-details-marker { display: none; }
+.site-account-avatar {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  place-items: center;
+  border-radius: 50%;
+  background: #d9a15f;
+  color: #30231a;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.site-account-name {
+  max-width: 112px;
+  overflow: hidden;
+  font-size: 13px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.site-account-chevron { margin-left: 2px; font-size: 10px; transition: transform 150ms ease; }
+.site-account-menu[open] .site-account-chevron { transform: rotate(180deg); }
+.site-account-popover {
+  position: absolute;
+  z-index: 1200;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 220px;
+  padding: 7px;
+  border: 1px solid #e6e3dc;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 10px 28px rgb(0 0 0 / 19%);
+}
+
+.site-account-email {
+  display: block;
+  overflow: hidden;
+  padding: 9px 10px 11px;
+  border-bottom: 1px solid #ece9e2;
+  color: #777168;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.site-account-popover a,
+.site-account-popover button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #302d28;
+  font: 500 14px 'DM Sans', 'Segoe UI', sans-serif;
+  letter-spacing: 0;
+  text-align: left;
+  text-decoration: none;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.site-account-popover a:hover,
+.site-account-popover button:hover { background: #f4f2ec; color: #493522; }
+.site-account-popover i { width: 16px; color: #8a6745; text-align: center; }
+
+@media (max-width: 768px) {
+  .navbar-nav .site-account-item { width: 100%; margin: 0; text-align: center; }
+  .site-account-menu { width: 100%; }
+  .site-account-menu summary { justify-content: center; }
+  .site-account-popover { position: static; width: 100%; margin-top: 7px; box-shadow: none; text-align: left; }
+}
+

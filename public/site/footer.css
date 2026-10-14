@@ -1,0 +1,74 @@
+ <div class="footer_widget pt-80 pb-130">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-4 order-md-1 order-lg-1">
+          <div class="footer_about mt-45">
+            <h4 class="footer_title">About Us</h4>
+            <p>"Where every cup tells a story — Zild Coffee, your cozy corner for brews, bites, and beautiful moments."
+            </p>
+            <ul class="social">
+              <li><a href=""><i class="lni lni-facebook-filled"></i></a></li>
+
+              <li><a href=""><i class="lni lni-instagram-original"></i></a></li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3 order-md-3 order-lg-2">
+          <div class="footer_link_wrapper d-flex flex-wrap">
+            <div class="footer_link mt-45">
+              <h4 class="footer_title">Opening Hours</h4>
+              <ul>
+                <li>Mon-Fri: 2:00 P.M - 10.00 P.M</li>
+                <li>Sat - Sun: 12:00 P.M - 11:00 P.M</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 order-md-2 order-lg-3">
+          <div class="footer_link mt-45">
+            <h4 class="footer_title">Quick Links</h4>
+            <ul>
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="term-service.html">Terms of Service</a></li>
+              <li><a href="term of use.html">Terms of Use</a></li>
+              <li><a href="cookie-privacy.html">Cookie Policy</a></li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3 order-md-4 order-lg-4">
+          <div class="footer_contact mt-45">
+            <h4 class="footer_title">Contact Us</h4>
+            <ul>
+              <li>Email: <a href="ZildCafe@gmail.com">contact@ZildCafe.com</a></li>
+              <li>Phone: <a href="tel:+1234567890">0930 558 4612</a></li>
+              <li>Address: Steady ready, Sta.Rosa, Concepcon, Tarlac</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div><br><br>
+
+    <div class="container">
+      <div class="copyright text-center">
+        <p>Designed and Developed by <a href="https://www.facebook.com/daniella.nogoy.33"
+            rel="nofollow text-decoration-none">Daniella</a></p>
+      </div>
+    </div>
+
+  </div>
+  </section>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/scroll.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</body>
+
+</html>
